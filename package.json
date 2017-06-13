@@ -24,5 +24,8 @@
     "react-dom": "^15.4.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "react-scrollable-anchor": "^0.4.2"
   }
 }

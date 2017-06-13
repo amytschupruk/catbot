@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CatBotMessages from './catbotMessages.js';
+import $ from 'jquery';
 
 // Initialize Firebase
 var config = {
@@ -78,7 +79,9 @@ class App extends React.Component {
     			return (
     				<div>
 						<header>
-							<h2>Chat with a real live catbot!</h2>
+							<div className="animated infinite flash flash-red-on flash-red"></div>
+							<div className="flash-red flash-red-off"></div>
+							<h2>Chatting live</h2>
 							<button className="logout" onClick={this.logout}>Log Out</button>
 						</header>
 						<div className="chat-container">
@@ -87,20 +90,23 @@ class App extends React.Component {
 										return (
 											<div>
 												<div className="user-single-message-container">
+													<p className="username hooman-name">Hooman:</p>
 													<p className="userMessage">{userMessage.content || null}</p>
 												</div>
 												<div className="catbot-single-message-container">
+													<p className="username catname">Catbot:</p>
 													<p className="catbotMessage">{userMessage.response.catbotMessage || null}</p>
 												</div>
 												
 											</div>
 										)
 									})} 
+								<div id="chat-bottom" className="chatBottom"></div>
 							</section>
 							<section className="user-input-container">
 								<form onSubmit={this.handleSubmit}>
-									<input type="text" name="userMessage" placeholder="Write a message to Catbot." onChange={this.handleChange} value={this.state.userMessage} />
-									<button>Send</button>
+									<textarea type="text" name="userMessage" placeholder="Write a message to Catbot." onChange={this.handleChange} value={this.state.userMessage}></textarea>
+									<a href="#chat-bottom" className="to-bottom-of-chat"><button className="send-button">Send</button></a>
 								</form>
 							</section>
 						</div> 
@@ -108,7 +114,7 @@ class App extends React.Component {
     			)
     		}
     		else {
-    			<h2>Chat with a real live catbot!</h2>
+
     			return <button onClick={this.login}>Log In</button>
     		}
     	}
@@ -119,10 +125,12 @@ class App extends React.Component {
 		    </div>	
 		    <div className="aside-section">   	
 		        <section className="logo-img-container">
-		        	<h1>CATBOT!!!!!</h1>
-		        	<img src="http://www.bharatint.com/img/categories/our-cat-shop-image.png" alt=""/>
+		        	<img className="kitten" src="../../public/assets/kitten.png" />
 		        </section>
-		    </div>    	          
+		    </div> 
+		    <footer>
+		    	<p className="background-citation">Background pattern <a href="http://www.freepik.com/free-vector/colorful-geometric-patterns_888583.htm" className="background-citation-link">Designed by Freepik</a></p> 
+		    </footer>	  	          
         </div>
       )
     }
