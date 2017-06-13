@@ -1,0 +1,59 @@
+//Login page 
+
+.login-page {
+	text-align: center;
+	h1 {
+		font-family: 'Orbitron', sans-serif;
+		color: white;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 6px;
+		font-size: 50px;
+		background: #b72870;
+		padding: 20px;
+		margin-top: 0px;
+		border-bottom: 1px solid black;
+		border-top: 1px solid black;
+		text-shadow: -2.5px 5px 0px #7ec8a1,
+		             -5px 10px 0px #07b0cc,
+		             -7.5px 15px 0px #672c8e;
+	}
+	img {
+		width: 35%;
+		border-radius: 10px;
+		border: 3px solid #b72870;
+	}
+	h2 {
+		display: inline-block;
+		margin-left: 20px;
+	}
+	.flash-red {
+		z-index: 999;
+		width: 20px;
+		height: 20px;
+		background: red;
+		display: inline-block;
+		border-radius: 50%;
+		margin-top: 20px;
+	}
+	.flash-red-on {
+		border: 2px solid black;
+		position: relative;
+		top: 0;
+		left: 20px;
+	}
+	.flash-red-off {
+		background: black;
+	}
+	p {
+		font-size: 20px;
+		color: white;
+	}
+	button {
+		margin-top: 15px;
+	}
+
+}
+
+// <div className="animated infinite flash flash-red-on flash-red"></div>
+// <div className="flash-red flash-red-off"></div>

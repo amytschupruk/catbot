@@ -45,6 +45,9 @@ const catbotMessages = [
     catbotMessage: 'Purrrrcisely.'
   },
   {
+    catbotMessage: 'Feed me?'
+  },
+  {
     catbotMessage: 'I\'ve caught a mouse just for u. 😻'
   }
 ];
