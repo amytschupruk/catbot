@@ -1,9 +1,9 @@
 const catbotMessages = [
   {
-    catbotMessage: 'Purrrrrrrrrfect.'
+    catbotMessage: 'i is a purrrrrrrrrfect cat'
   },
   {
-     catbotMessage: 'Hand over the cat nip, hooman!'
+     catbotMessage: 'hand over the cat nip, hooman!'
   },
   {
     catbotMessage: 'MEOWWWWW!'
@@ -12,43 +12,62 @@ const catbotMessages = [
     catbotMessage: '* knocks over nearest glass *'
   },
   {
-     catbotMessage: 'Do u know where I can find the nearest box?'
+     catbotMessage: 'u no where is the nearest cardboard box?'
   },
   {
-    catbotMessage: 'I could use some cat nip right about meow.'
+    catbotMessage: 'i could use some cat nip right about meow'
   },
   {
-    catbotMessage: 'Hey meow!'
+    catbotMessage: 'hey meow!'
   },
   {
-     catbotMessage: 'You\'ve got to be kitten me.'
+     catbotMessage: 'u\'ve got to be kitten me.'
   },
   {
-    catbotMessage: 'Fur Real?'
+    catbotMessage: 'r u fur real?'
   },
   {
     catbotMessage: '* coughs up furball *'
   },
   {
-     catbotMessage: 'I\'d like to get back to napping and tearing up the couch meow.'
+     catbotMessage: 'i\'d like to get back to napping and tearing up my hooman\'s couch meow'
   },
   {
     catbotMessage: '* stares blankly *'
   },
   {
-    catbotMessage: 'Don\'t mind me. Just baskin\' in my own pawesomeness.'
+    catbotMessage: 'don\'t mind me, just baskin\' in my own pawesomeness.'
   },
   {
-     catbotMessage: '🎵 Here I am, rock you like a purrrr-icane 🎵'
+     catbotMessage: '🎵 here I am, rock you like a purrrr-icane 🎵'
   },
   {
-    catbotMessage: 'Purrrrcisely.'
+    catbotMessage: 'purrrrcisely'
   },
   {
-    catbotMessage: 'Feed me?'
+    catbotMessage: 'feed me?'
   },
   {
-    catbotMessage: 'I\'ve caught a mouse just for u. 😻'
+    catbotMessage: 'no dogs plz'
+  },
+  {
+    catbotMessage: 'belly rubs?'
+  },
+  {
+    catbotMessage: 'LOL watever, hooman'
+  },
+  {
+    catbotMessage: 'omg u is silly hooman'
+  },
+  {
+    catbotMessage: 'what u mean? i is not fluent in hooman-speak'
+  },
+  {
+    catbotMessage: 'omg so tired, wuz lookin at cat gifs all night'
+  },
+
+  {
+    catbotMessage: 'OMG so excited... i caught a mouse for my hooman, i put in their shoe 😻'
   }
 ];
 
