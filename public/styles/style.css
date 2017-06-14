@@ -206,17 +206,10 @@ button {
     z-index: 999;
     width: 20px;
     height: 20px;
-    background: red;
     display: inline-block;
     border-radius: 50%;
-    margin-top: 20px; }
-  .login-page .flash-red-on {
-    border: 2px solid black;
-    position: relative;
-    top: 0;
-    left: 20px; }
-  .login-page .flash-red-off {
-    background: black; }
+    margin-top: 20px;
+    border: 2px solid black; }
   .login-page p {
     font-size: 20px;
     color: white; }
@@ -230,20 +223,17 @@ header {
     height: 20px;
     border-radius: 50%;
     display: inline-block;
-    margin-right: 20px; }
-  header .flash-red-on {
-    background: red;
-    position: absolute;
-    margin-top: 17px;
+    margin-right: 20px;
     border: 2px solid black; }
-  header .flash-red-off {
-    width: 20px;
-    height: 20px;
-    background: black;
-    border: 5px solid black; }
   header .logout {
     display: inline-block;
     float: right; }
+
+@keyframes flash {
+  from, 50%, to {
+    background: black; }
+  25%, 75% {
+    background: red; } }
 
 .chat-section {
   width: 50%;

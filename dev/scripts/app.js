@@ -93,8 +93,7 @@ class App extends React.Component {
     			return (
     				<div>
 						<header>
-							<div className="animated infinite flash flash-red-on flash-red"></div>
-							<div className="flash-red flash-red-off"></div>
+							<div className="animated infinite flash flash-red"></div>
 							<h2>Chatting live</h2>
 							<button className="logout" onClick={this.logout}>Log Out</button>
 						</header>
@@ -133,8 +132,7 @@ class App extends React.Component {
     			 	<h1>Catbot</h1>
     			 	<img src="../../public/assets/avatar.jpg" alt="cat avatar with sunglasses on beach"/>
     			 	<div className="online-meow">
-	    			 	<div className="animated infinite flash flash-red-on flash-red"></div>
-	    			 	<div className="flash-red flash-red-off"></div>
+	    			 	<div className="animated infinite flash flash-red"></div>
     			 		<h2>Online Meow</h2>
     			 	</div>
     				<p>Log in to chat live with Catbot!</p>
