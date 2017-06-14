@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CatBotMessages from './catbotMessages.js';
-import $ from 'jquery';
+import CatBotMessages from './catbotMessages.js'; //import for catbot messages array
 
 // Initialize Firebase
 var config = {
@@ -17,9 +16,10 @@ firebase.initializeApp(config);
 const auth = firebase.auth();
 var provider = new firebase.auth.GoogleAuthProvider();
 
-// const dbRef = firebase.database().ref('/');
 
+//main App
 class App extends React.Component {
+	//setting initial states
 	constructor() {
 		super();
 		this.state = {
@@ -30,35 +30,43 @@ class App extends React.Component {
 			userName: '',
 			animateMessage: false
 		}
+		//binding methods to state
 		this.login = this.login.bind(this);
 		this.logout = this.logout.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
+	//login method
 	login() {
 		auth.signInWithPopup(provider)
 		.then((result) => {
 			const user = result.user;
+			//set user state to user (login info)
+			//set "loggedIn" state to "true"
 			this.setState({
 				user: user,
 				loggedIn: true
 			})
 		})
 	}
+	//logout method
 	logout() {
 		auth.signOut()
 		.then(() => {
 			this.setState({
+				//set user state to null and loggedIn to false (initial state)
 				user: null,
 				loggedIn: false
 			})
 		});
 	}
+	//handleChange method on textarea to update with user input
 	handleChange(e) {
 		this.setState({
 			[e.target.name]: e.target.value
 		});
 	}
+	//handleSubmit method on chat "send"
 	handleSubmit(e) {
 		e.preventDefault();
 		//userMessage = where items will be stored
@@ -80,6 +88,7 @@ class App extends React.Component {
 	}
     render() {
     	const showChat = () => {
+    		//if user is logged in show chat box
     		if(this.state.loggedIn) {
     			return (
     				<div>
@@ -91,7 +100,7 @@ class App extends React.Component {
 						</header>
 						<div className="chat-container">
 							<section className="messages-container">
-									 {this.state.convo.map((userMessage, i) => { 
+									 {this.state.convo.map((userMessage, i) => { //mapping over convo items (messages)
 										return (
 											<div key={`message-${i}`}>
 												<div className="user-single-message-container">
@@ -116,7 +125,7 @@ class App extends React.Component {
 						</div> 
     				</div>
     			)
-    		}
+    		} //if user is not logged in, show "log in" box
     		else {
 
     			return (
@@ -152,8 +161,9 @@ class App extends React.Component {
       )
     }
     componentDidUpdate() {
-    	var textarea = document.querySelector('.messages-container');
-		textarea.scrollTop = textarea.scrollHeight;
+    	//function to maintain scroll at bottom of "messages" conainter
+    	var messagesArea = document.querySelector('.messages-container');
+		messagesArea.scrollTop = messagesArea.scrollHeight;
     }
     componentDidMount() {
 	    firebase.auth().onAuthStateChanged((user) => { //this checks to see if user logged in
