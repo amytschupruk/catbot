@@ -15,7 +15,7 @@ firebase.initializeApp(config);
 
 const auth = firebase.auth();
 var provider = new firebase.auth.GoogleAuthProvider();
-
+const dbRef = firebase.database().ref('/');
 
 //main App
 class App extends React.Component {
@@ -70,12 +70,15 @@ class App extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		//userMessage = where items will be stored
-		const userChatRef = firebase.database().ref('convo')
+		const userId = this.state.user.uid
+		const userChatRef = firebase.database().ref(userId)
+		// const userChatRef = firebase.database().ref('convo')
 		//messages to be stored
 		const message = {
 			content: this.state.userMessage,
 			response: CatBotMessages[Math.floor(Math.random() * CatBotMessages.length)]
 		}
+		console.log(message)
 		//updating message to Firebase
 		userChatRef.push(message);
 		//clear user input for subsequent message entry 
@@ -148,7 +151,7 @@ class App extends React.Component {
 		    </div>	
 		    <div className="aside-section">   	
 		        <section className="logo-img-container">
-		        	<img className="kitten animated fadeInLeft" src="../../public/assets/kitten.png" />
+		        	<img className="cat animated fadeInLeft" src="../../public/assets/cat.png" />
 		        </section>
 		    </div> 
 		    <footer>
@@ -160,8 +163,8 @@ class App extends React.Component {
     }
     componentDidUpdate() {
     	//function to maintain scroll at bottom of "messages" conainter
-    	var messagesArea = document.querySelector('.messages-container');
-		messagesArea.scrollTop = messagesArea.scrollHeight;
+    	var textarea = document.querySelector('.messages-container');
+		textarea.scrollTop = textarea.scrollHeight;
     }
     componentDidMount() {
 	    firebase.auth().onAuthStateChanged((user) => { //this checks to see if user logged in
@@ -173,9 +176,9 @@ class App extends React.Component {
 	    				animateMessage: true
 			    	});
 			    	// taking updated user data and storing 
-			    	const userChatRef = firebase.database().ref('convo');
+			    	const userId = user.uid;
+			    	const userChatRef = firebase.database().ref(userId);
 			    	userChatRef.on('value', (newMessage) => {
-			    		// array for new messages
 			    		let newMessages = [];
 			    		let convo = newMessage.val();
 			    		for (let key in convo) {
