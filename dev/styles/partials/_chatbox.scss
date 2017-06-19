@@ -159,9 +159,15 @@ header {
 /* Landscape phones and down */
 @media (max-width: 480px) {
 	.chat-section {
-	width: 95%;
+	width: 100%;
 	padding: 30px 10px;
-	height: 90vh;
+	height: 100vh;
+		textarea {
+			height: 80px;
+		}
+		.send-button {
+			height: 80px;
+		}
 	}
 	.chat-section h2 {
 		letter-spacing: 0px;
